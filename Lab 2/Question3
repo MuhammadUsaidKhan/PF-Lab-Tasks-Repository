@@ -1,4 +1,4 @@
-//Assuming the numbers entered are not 0
+//Assuming the numbers entered are not 0's
 
 START
 DECLARE a, b, c : INTEGER
