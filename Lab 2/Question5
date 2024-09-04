@@ -1,1 +1,20 @@
-
+START
+DECLARE Number : INTEGER
+DECLARE Divisor : INTEGER
+OUTPUT "Please Enter the Number: "
+INPUT Dividend
+OUTPUT "Please Enter the Divisor: "
+INPUT Divisor
+IF Dividend MOD Divisor == 0
+   THEN
+        OUTPUT "Yes, it is divisible by ", Divisor
+        IF Number MOD 2 == 0 
+           THEN
+                OUTPUT "The Number Entered is Even"
+           ELSE
+                OUTPUT "The Number Entered is Odd"
+        ENDIF
+   ELSE
+        OUTPUT "No, it is not divisible by ", Divisor
+ENDIF
+END
