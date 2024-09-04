@@ -1,3 +1,5 @@
+//Implement an algorithm for making a simple calculator with all the operators (+,-,*,/,%)
+
 START
 DECLARE Num1, Num2, Result : REAL
 DECLARE Operator : CHAR
