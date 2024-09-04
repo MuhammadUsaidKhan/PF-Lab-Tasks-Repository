@@ -1,3 +1,5 @@
+//Create a small calculator which only does ‘+’ or ‘-‘Operations.
+
 START
 DECLARE Num1, Num2, Result : REAL
 DECLARE Operator : CHAR
