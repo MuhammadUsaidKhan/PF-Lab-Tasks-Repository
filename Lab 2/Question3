@@ -7,7 +7,7 @@ OUTPUT "Enter First Number: "
 INPUT a
 OUTPUT "Enter Second Number: "
 INPUT b
-OUTPUT "Enter Third Numaber: "
+OUTPUT "Enter Third Number: "
 INPUT c
 Sum = a
 Count1 = 1
