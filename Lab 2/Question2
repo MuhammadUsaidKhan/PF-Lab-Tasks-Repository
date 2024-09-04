@@ -1,3 +1,5 @@
+//Find the maximum number in any of three variables.
+
 START
 DECLARE Num1, Num2, Num3 : INTEGER
 OUTPUT "Please Enter First Number: "
