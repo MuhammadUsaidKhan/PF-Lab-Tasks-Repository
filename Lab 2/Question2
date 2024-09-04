@@ -1,1 +1,21 @@
-
+START
+DECLARE Num1, Num2, Num3 : INTEGER
+OUTPUT "Please Enter First Number: "
+INPUT Num1
+OUTPUT "Please Enter Second Number: "
+INPUT Num2
+OUTPUT "Please Enter Third Number: "
+INPUT Num3
+IF Num1 > Num2 AND Num1 > Num3
+  THEN
+      OUTPUT Num1
+  ELSEIF Num2 > Num3
+        THEN
+            OUTPUT Num2
+        ELSE
+            OUTPUT Num3
+  ENDIF
+ENDIF
+END
+      
+      
