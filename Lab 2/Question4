@@ -1,1 +1,20 @@
+START
+DECLARE Num1, Num2, Result : REAL
+DECLARE Operator : CHAR
+OUTPUT "Enter First Number: "
+INPUT Num1
+OUTPUT "Enter Second Number: "
+INPUT Num2
+OUTPUT "Please Enter The Operator in order to perform the Operation on Two Numbers: "
+INPUT Operator
+IF Operator == '+'
+  THEN
+       Result = Num1 + Num2
+       OUTPUT Result 
+  ELSE
+       Result = Num1 - Num2
+       OUTPUT Result
+ENDIF
+END
+
 
