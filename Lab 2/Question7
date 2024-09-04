@@ -1,1 +1,33 @@
-
+START
+DECLARE Num1, Num2, Result : REAL
+DECLARE Operator : CHAR
+OUTPUT "Please Enter First Number: "
+INPUT Num1
+OUTPUT "Please Enter Second Number: "
+INPUT Num2
+OUTPUT "Please Enter The Operator for performing the required Operation: "
+INPUT Operator
+IF Operator == '+'
+   THEN
+        Result = Num1 + Num2
+        OUTPUT Result
+   ELSEIF Operator == '-'
+         THEN
+              Result = Num1 - Num2
+              OUTPUT Result
+         ELSEIF Operator == '*'
+                THEN
+                     Result = Num1 * Num2
+                     OUTPUT Result
+                ELSEIF Operator == '/'
+                       THEN
+                            Result = Num1 / Num2
+                            OUTPUT Result
+                       ELSE
+                            Result = Num1 % Num2
+                            OUTPUT Result
+                ENDIF
+         ENDIF
+    ENDIF
+ENDIF
+END
