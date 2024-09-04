@@ -1,1 +1,23 @@
-
+START
+DECLARE NUMBER : INTEGER
+OUTPUT "Enter Appropriate Number: "
+INPUT Number
+WHILE Number > 12 OR Number <= 0 
+      OUTPUT "Please Enter Appropriate Number: "
+      INPUT Number
+ENDWHILE
+CASE OF Number
+     1 : OUTPUT "January"
+     2 : OUTPUT "February"
+     3 : OUTPUT "March"
+     4 : OUTPUT "April"
+     5 : OUTPUT "May"
+     6 : OUTPUT "June"
+     7 : OUTPUT "July"
+     8 : OUTPUT "August"
+     9 : OUTPUT "September"
+     10 : OUTPUT "October"
+     11 : OUTPUT "November"
+     OTHERWISE : OUTPUT "December"
+ENDCASE
+END
