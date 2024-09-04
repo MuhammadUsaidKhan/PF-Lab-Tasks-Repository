@@ -1,4 +1,7 @@
-//Assuming the numbers entered are not 0's
+//Take three variables as input and add them without using the + operator
+
+
+### Assuming the numbers entered are not 0's
 
 START
 DECLARE a, b, c : INTEGER
