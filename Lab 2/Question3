@@ -1,1 +1,28 @@
+//Assuming the numbers entered are not 0
+
+START
+DECLARE a, b, c : INTEGER
+DECLARE Sum, Count1, Count2 : INTEGER
+OUTPUT "Enter First Number: "
+INPUT a
+OUTPUT "Enter Second Number: "
+INPUT b
+OUTPUT "Enter Third Numaber: "
+INPUT c
+Sum = a
+Count1 = 1
+Count2 = 1
+WHILE Count1 <= b
+      WHILE Count2 <= c
+            Sum = Sum + 1
+            Count2 = Count2 + 1
+      ENDWHILE
+      Sum = Sum + 1
+      Count1 = Count1 + 1
+ENDWHILE
+OUTPUT Sum
+END
+            
+            
+
 
