@@ -1,1 +1,32 @@
+#include <stdio.h>
 
+int main() {
+    float Principle;
+    printf("Enter Principle Amount on which you have to calculate Interest: ");
+    scanf("%f", &Principle);
+    if(Principle<=100 || Principle>=1000000){
+        printf("Invalid Principle!! Please Re enter.");
+    }
+    else{
+        float Rate;
+    printf("Enter Rate of Interest In Percentage: ");
+    scanf("%f", &Rate);
+    if (Rate<=5 || Rate>=10){
+        printf("Invalid Rate!! Please Re enter.");
+    }
+    else{
+        float TimePeriod;
+    printf("Enter Time Period in Years: ");
+    scanf("%f", &TimePeriod);
+    if(TimePeriod<=1 || TimePeriod>=10){
+        printf("Invalid Years!! Please Re enter.");
+    }
+    else{
+        float Interest;
+        Interest = Principle*(Rate/100)*TimePeriod;
+        printf("The Interest is: %f", Interest);
+    }
+    }
+    }
+    
+    }
