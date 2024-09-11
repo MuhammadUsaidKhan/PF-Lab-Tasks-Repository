@@ -1,1 +1,18 @@
+#include <stdio.h>
 
+int main() {
+    int Num1;
+    printf("Enter First Number: ");
+    scanf("%d", &Num1);
+    int Num2;
+    printf("Enter Second Number: ");
+    scanf("%d", &Num2);
+    int temp;
+    temp = Num1;
+    Num1 = Num2;
+    Num2 = temp;
+    printf("Now the value of First Number is: %d\n", Num1);
+    printf("Now the value of Second Number is: %d", Num2);
+
+    return 0;
+}
