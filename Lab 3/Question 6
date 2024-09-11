@@ -1,1 +1,12 @@
+#include <stdio.h>
 
+int main(){
+    float x_coordinate1 = 5.000;
+    float x_coordinate2 = 3.000;
+    float y_coordinate1 = 4.000;
+    float y_coordinate2 = 2.000;
+    float Slope = (y_coordinate2 - y_coordinate1)/(x_coordinate2 - x_coordinate1);
+    printf("The Gradient is: %.3f", Slope);
+    return 0;
+    
+}
