@@ -1,1 +1,17 @@
+#include <stdio.h>
 
+int main() {
+    float FuelAverage;
+    printf("Enter your Car's Fuel Average as Litres per Kilometer: ");
+    scanf("%f", &FuelAverage);
+    if(FuelAverage <= 0){
+        printf("Invalid Entry!! Please Re enter.");
+    }
+    float FuelConsumed;
+    float FuelCost;
+    FuelConsumed = 1207*2*FuelAverage;
+    FuelCost = (1207*FuelAverage*118)+(1207*FuelAverage*123);
+    printf("The Total Fuel Consumed in journey is: %f\n", FuelConsumed);
+    printf("The Total Fuel Cost for the whole Journey is: %f", FuelCost);
+    return 0;
+}
