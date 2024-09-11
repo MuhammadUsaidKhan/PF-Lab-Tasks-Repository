@@ -1,1 +1,2 @@
+Because in C language, int function can only store integer values between 2 and 4 bytes and this value is out of range. That is why it is giving wrong output.
 
