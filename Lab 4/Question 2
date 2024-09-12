@@ -1,1 +1,13 @@
+#include<stdio.h>
+int main(){
+	int number;
+	printf("Enter Number that is positive, multiple of 2 and divisible by 10: ");
+	scanf("%d", &number);
+	if((number>0)&&(number%2==0)&&(number%10==0)){
+		printf("%d is Positive, Multiple of 2 and Divisible by 10", number);}
+		else{
+			printf("The %d is not Positive, Multiple of 2 and Divisible by 10", number);
+		}
+	return 0;
+}
 
