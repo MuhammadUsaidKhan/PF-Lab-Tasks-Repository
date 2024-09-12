@@ -1,1 +1,20 @@
-
+#include<stdio.h>
+int main(){
+	char character;
+	printf("Enter the Character you want to know about: ");
+	scanf(" %c", &character);
+	if(character >='a' && character <='z'){
+		printf("The %c is a Small Alphabet", character);}
+		else{
+			if(character >='A' && character <='Z'){
+				printf("The %c is a Capital Alphabet", character);}
+				else{
+					if(character >='0' && character <='9'){
+						printf("The %c is a Digit", character);}
+						else{
+							printf("The %c is a Special Character", character);
+						}
+					}
+				}
+	return 0;
+}
