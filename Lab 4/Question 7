@@ -1,1 +1,79 @@
-
+#include <stdio.h>
+int main() {
+    int CustomerID;
+    printf("Enter Your Customer ID: ");
+    scanf("%d", &CustomerID);
+    int UnitsConsumed;
+    printf("Enter the Units Consumed: ");
+    scanf("%d", &UnitsConsumed);
+    float ChargeperUnit;
+    float TotalAmount;
+    float SurchargeAmount;
+    float NetAmount;
+    if(UnitsConsumed<=199 && UnitsConsumed>=0){
+        ChargeperUnit = 16.20;
+        TotalAmount = UnitsConsumed*ChargeperUnit;
+        if(TotalAmount>18000){
+            SurchargeAmount = TotalAmount*0.15;
+            NetAmount = TotalAmount + SurchargeAmount;
+        }
+        else{
+            NetAmount = TotalAmount;
+        }
+        printf("Customer ID: %d\n", CustomerID);
+        printf("Units Consumed: %d\n", UnitsConsumed);
+        printf("Amount Charges @Rs.%f per unit: %f\n", ChargeperUnit, TotalAmount);
+        printf("Surcharge Amount: %f\n", SurchargeAmount);
+        printf("Net Amount Paid by the Customer: %f", NetAmount);
+        
+    } 
+    else if(UnitsConsumed>=200 && UnitsConsumed<300){
+        ChargeperUnit = 20.10;
+        TotalAmount = UnitsConsumed*ChargeperUnit;
+        if(TotalAmount>18000){
+            SurchargeAmount = TotalAmount*0.15;
+            NetAmount = TotalAmount + SurchargeAmount;
+        }
+        else{
+            NetAmount = TotalAmount;
+        }
+        printf("Customer ID: %d\n", CustomerID);
+        printf("Units Consumed: %d\n", UnitsConsumed);
+        printf("Amount Charges @Rs.%f per unit: %f\n", ChargeperUnit, TotalAmount);
+        printf("Surcharge Amount: %f\n", SurchargeAmount);
+        printf("Net Amount Paid by the Customer: %f", NetAmount);
+    }
+    else if(UnitsConsumed>=300 && UnitsConsumed<500){
+        ChargeperUnit = 27.10;
+        TotalAmount = UnitsConsumed*ChargeperUnit;
+        if(TotalAmount>18000){
+            SurchargeAmount = TotalAmount*0.15;
+            NetAmount = TotalAmount + SurchargeAmount;
+        }
+        else{
+            NetAmount = TotalAmount;
+        }
+        printf("Customer ID: %d\n", CustomerID);
+        printf("Units Consumed: %d\n", UnitsConsumed);
+        printf("Amount Charges @Rs.%f per unit: %f\n", ChargeperUnit, TotalAmount);
+        printf("Surcharge Amount: %f\n", SurchargeAmount);
+        printf("Net Amount Paid by the Customer: %f", NetAmount);
+    }
+    else{
+        ChargeperUnit = 35.90;
+        TotalAmount = UnitsConsumed*ChargeperUnit;
+        if(TotalAmount>18000){
+            SurchargeAmount = TotalAmount*0.15;
+            NetAmount = TotalAmount + SurchargeAmount;
+        }
+        else{
+            NetAmount = TotalAmount;
+        }
+        printf("Customer ID: %d\n", CustomerID);
+        printf("Units Consumed: %d\n", UnitsConsumed);
+        printf("Amount Charges @Rs.%f per unit: %f\n", ChargeperUnit, TotalAmount);
+        printf("Surcharge Amount: %f\n", SurchargeAmount);
+        printf("Net Amount Paid by the Customer: %f", NetAmount);
+    }
+    return 0;
+}
