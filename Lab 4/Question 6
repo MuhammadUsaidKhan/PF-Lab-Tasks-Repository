@@ -1,1 +1,48 @@
-
+#include <stdio.h>
+int main() {
+    float ActualAmount;
+    printf("Enter the Actual Amount of shopping: ");
+    scanf("%f", &ActualAmount);
+    float SavedAmount;
+    float DiscountedAmount;
+    if(ActualAmount<500){
+        printf("You are not eligible for discount\n");
+        printf("Your amount to be paid is: %f\n", ActualAmount);
+        SavedAmount = 0;
+        printf("Your Amount Saved is: %f\n", SavedAmount);
+        printf("Your Amount After Discont is: %f", ActualAmount);
+    }
+    else if(ActualAmount>=500 && ActualAmount<2000){
+        printf("You are eligible for discount\n");
+        printf("Your amount to be paid is: %f\n", ActualAmount);
+        SavedAmount = ActualAmount*0.05;
+        DiscountedAmount = ActualAmount - SavedAmount;
+        printf("Your Amount Saved is: %f\n", SavedAmount);
+        printf("Your Amount After Discont is: %f\n", DiscountedAmount);
+         }
+    else if(ActualAmount>=2000 && ActualAmount<4000){
+         printf("You are eligible for discount\n");
+        printf("Your amount to be paid is: %f\n", ActualAmount);
+        SavedAmount = ActualAmount*0.1;
+        DiscountedAmount = ActualAmount - SavedAmount;
+        printf("Your Amount Saved is: %f\n", SavedAmount);
+        printf("Your Amount After Discont is: %f", DiscountedAmount);
+    }
+    else if(ActualAmount>=4000 && ActualAmount<6000){
+         printf("You are eligible for discount\n");
+        printf("Your amount to be paid is: %f\n", ActualAmount);
+        SavedAmount = ActualAmount*0.2;
+        DiscountedAmount = ActualAmount - SavedAmount;
+        printf("Your Amount Saved is: %f\n", SavedAmount);
+        printf("Your Amount After Discont is: %f", DiscountedAmount);
+    }
+    else{
+         printf("You are eligible for discount\n");
+        printf("Your amount to be paid is: %f\n", ActualAmount);
+        SavedAmount = ActualAmount*0.35;
+        DiscountedAmount = ActualAmount - SavedAmount;
+        printf("Your Amount Saved is: %f\n", SavedAmount);
+        printf("Your Amount After Discont is: %f\n", DiscountedAmount);
+    }
+    return 0;
+}
