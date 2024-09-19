@@ -1,1 +1,24 @@
-
+#include<stdio.h>
+int main(){
+	float numbercalories;
+	printf("Enter Number Of Calories: ");
+	scanf("%f", &numbercalories);
+	float fatgrams;
+	printf("Enter number of Calories that comes from fat: ");
+	scanf("%f", &fatgrams);
+	float fat;
+	float percentage;
+	fat = fatgrams*9;
+	if(numbercalories<=0 || fatgrams<=0){
+		printf("Error!!Please Enter Again.");
+	}
+	else if(fat>numbercalories){
+		printf("Error!!Please Enter Again.");
+	}
+	else{
+		percentage = (fat/numbercalories)*100;
+		printf("The percentage of calories from fat is: %f", percentage);
+	} 
+	
+	return 0;
+}
