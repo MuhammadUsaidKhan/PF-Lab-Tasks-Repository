@@ -6,7 +6,7 @@ int main(){
 	char weekday;
 	printf("Enter 'T' or 't' for True or 'F' or 'f' for False for either it is a weekday or not: ");
 	scanf(" %c", &weekday);
-	if((vacation=='F' && weekday=='F') || (vacation=='f' && weekday=='t')){
+	if((vacation=='F' && weekday=='F') || (vacation=='f' && weekday=='f')){
 		printf("SleepIn = TRUE");
 	}
 	else if((vacation=='F' && weekday=='T') || (vacation=='f' && weekday=='t')){
