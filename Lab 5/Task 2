@@ -1,1 +1,19 @@
-
+#include<stdio.h>
+int main(){
+	char vacation;
+	printf("Enter 'T' or 't' for True or 'F' or 'f' for False for either on vacation or not: ");
+	scanf(" %c", &vacation);
+	char weekday;
+	printf("Enter 'T' or 't' for True or 'F' or 'f' for False for either it is a weekday or not: ");
+	scanf(" %c", &weekday);
+	if((vacation=='F' && weekday=='F') || (vacation=='f' && weekday=='t')){
+		printf("SleepIn = TRUE");
+	}
+	else if((vacation=='F' && weekday=='T') || (vacation=='f' && weekday=='t')){
+		printf("SleepIn = FALSE");
+	}
+	else if((vacation=='T' && weekday=='F') || (vacation=='t' && weekday=='f')){
+		printf("SleepIn = TRUE");
+	}
+  return 0;
+}
