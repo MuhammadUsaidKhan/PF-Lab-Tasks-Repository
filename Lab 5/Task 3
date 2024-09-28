@@ -1,0 +1,62 @@
+#include <stdio.h>
+int main() {
+    char coffeetype;
+    printf("Enter Your Coffee Type: ");
+    scanf(" %c", &coffeetype);
+    char size;
+    printf("Enter your size of Coffee Cup: ");
+    scanf(" %c", &size);
+    int Time;
+    switch(coffeetype){
+        case 'B':
+        switch(size){
+            case 'M':
+            printf("Put water on stove and wait for 20 minutes.\n");
+            printf("Add Sugar to water and wait for another 20 minutes.\n");
+            printf("Mix Well for 25 minutes.\n");
+            printf("Add Coffee and wait for 15 minutes.\n");
+            printf("Mix well for 25 minutes.\n");
+            printf("Now your coffee is ready.\n");
+            Time = 105;
+            printf("%d minutes will be taken to preapre your Manual Black coffee", Time);
+            break;
+            case 'D':
+            printf("Put water on stove and wait for 40 minutes.\n");
+            printf("Add Sugar to water and wait for another 40 minutes.\n");
+            printf("Mix Well for 50 minutes.\n");
+            printf("Add Coffee and wait for 30 minutes.\n");
+            printf("Mix well for 50 minutes.\n");
+            printf("Now your coffee is ready.\n");
+            Time = 210;
+            printf("%d minutes will be taken to preapre your Double Black coffee", Time);
+            break;}
+        break;
+        case 'W':
+        switch(size){
+            case 'M':
+            printf("Put water on stove and wait for 15 minutes.\n");
+            printf("Add Sugar to water and wait for another 15 minutes.\n");
+            printf("Mix Well for 20 minutes.\n");
+            printf("Add Coffee and wait for 2 minutes.\n");
+            printf("Add milk and wait for 4 minutes.\n");
+            printf("Mix well for 20 minutes.\n");
+            printf("Now your coffee is ready.\n");
+            Time = 76;
+            printf("%d minutes will be taken to preapre your Manual Black coffee", Time);
+            break;
+            case 'D':
+            printf("Put water on stove and wait for 30 minutes.\n");
+            printf("Add Sugar to water and wait for another 30 minutes.\n");
+            printf("Mix Well for 40 minutes.\n");
+            printf("Add Coffee and wait for 4 minutes.\n");
+            printf("Add milk and wait for 8 minutes.\n");
+            printf("Mix well for 40 minutes.\n");
+            printf("Now your coffee is ready.\n");
+            Time = 152;
+            printf("%d minutes will be taken to preapre your Double Black coffee", Time);
+            break;}
+        break;
+        default:
+        printf("You have entered the wrong coffee type.");}
+    return 0;
+}
