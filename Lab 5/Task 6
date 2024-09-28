@@ -1,0 +1,13 @@
+5 > 8 is false, so the expression after the colon (:) is evaluated.
+
+2 < 5 is true (because 2 is indeed less than 5).
+
+Now, the expression becomes 1 != true. Since true is considered as 1.
+
+1 != 1, which is false.
+
+So, the overall expression 1 != 2 < 5 is false.
+
+Since the condition 1 != 2 < 5 is false, the part after the colon (:) is chosen, which is 30.
+
+Therefore, x = 30.
