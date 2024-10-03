@@ -1,1 +1,31 @@
-
+#include <stdio.h>
+int main() {
+    int num;
+    printf("Enter Number: ");
+    scanf("%d", &num);
+    int count = 0;
+    int i;
+    for(i=1; i<=num; i++){
+      if((num%i)==0){
+          count = count + 1;
+      }  
+    }
+    if(count==2){
+        printf("The Number Entered is Prime.\n");
+        int precedingterm = 0;
+        int comingterm = 1;
+        int j;
+        int sum = 0;
+        printf("%d %d ", precedingterm,comingterm);
+        for(j = 2; j < num; j++){
+            sum = precedingterm + comingterm;
+            precedingterm = comingterm;
+            comingterm = sum;
+            printf("%d ", sum);
+        }
+    }
+    else{
+        printf("The Number Entered is Composite.");
+    }
+    return 0;
+}
