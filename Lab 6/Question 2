@@ -1,1 +1,20 @@
-
+#include <stdio.h>
+int main() {
+    int num;
+    printf("Enter Number: ");
+    scanf("%d", &num);
+    int count = 0;
+    int i;
+    for(i=1; i<=num; i++){
+      if((num%i)==0){
+          count = count + 1;
+      }  
+    }
+    if(count==2){
+        printf("The Number Entered is Prime.");
+    }
+    else{
+        printf("The Number Entered is Composite.");
+    }
+    return 0;
+}
