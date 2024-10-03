@@ -1,1 +1,21 @@
-
+#include <stdio.h>
+int main() {
+    int num;
+    printf("Enter Armstrong Number: ");
+    scanf("%d", &num);
+    int i;
+    int newnum=num;
+    int sum=0;
+    while(newnum>0){
+        i = newnum%10;
+        sum = sum + (i*i*i);
+        newnum = newnum/10;
+    }
+    if(sum==num){
+        printf("The Number Entered is an Armstrong Number.");
+    }
+    else{
+        printf("The Number Entered is not an Armstrong Number.");
+    }
+    return 0;
+}
