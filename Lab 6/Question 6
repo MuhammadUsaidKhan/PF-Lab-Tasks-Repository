@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main() {
+    int i=1;
+    do{
+        switch(i){
+            case 1:
+            printf("*       *\n");
+            i++;
+            break;
+            case 2:
+            printf("* * * * *\n");
+            i++;
+            break;
+            case 3:
+            printf("* * * * *\n");
+            i++;
+            break;
+            case 4:
+            printf("* * * * *\n");
+            i++;
+            break;
+            case 5:
+            printf("* * * * *\n");
+            i++;
+            break;
+            case 6:
+            printf("*       *\n");
+            i++;
+            break;
+        }
+    }while(i<=6);
+    return 0;
+}   
