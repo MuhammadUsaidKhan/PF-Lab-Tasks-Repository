@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main() {
+    int size;
+    printf("Enter the size of your string Array: ");
+    scanf("%d", &size);
+    char str[size];
+    printf("Enter Your String: ");
+    scanf("%s", str);
+    int i;
+    int count = 0;
+    int isPalindrome = 1;
+    for(i=0; i<size; i++){
+        if(str[i]=='\0'){
+            break;
+        }
+        count = count + 1;
+    }
+    if((count%2) == 1){
+        for(i=0; i<count/2; i++){
+            if (str[i] != str[count - i - 1]){
+                isPalindrome = 0;
+                break;
+            }
+        }
+    }
+    if (isPalindrome=1) {
+        printf("The string is a palindrome.\n");
+    } 
+    else {
+        printf("The string is not a palindrome.\n");
+    }
+    return 0;
+}
