@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    char str[100];
+    char *ptr;
+    int length = 0;
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin); 
+    ptr = str;
+    while (*ptr != '\0') {
+        if (*ptr == '\n') {
+            *ptr = '\0';
+            break;
+        }
+        ptr++;
+    }
+    ptr = str; 
+    while (*ptr != '\0') {
+        length++;
+        ptr++;
+    }
+    printf("Length of the string: %d\n", length);
+    char *start = str;
+    char *end = str + length - 1;
+    char temp;
+    while (start < end) {
+        temp = *start;
+        *start = *end;
+        *end = temp;
+        start++;
+        end--;
+    }
+    printf("Reversed string: %s\n", str);
+    return 0;
+}
