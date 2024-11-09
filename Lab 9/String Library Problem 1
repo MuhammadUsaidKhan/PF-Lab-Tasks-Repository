@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+helloint main() {
+    char destination[100], source[100];
+    int n;
+    printf("Enter the destination string: ");
+    gets(destination);
+    printf("Enter the source string: ");
+    gets(source);
+    printf("Enter the number of characters to append: ");
+    scanf("%d", &n);
+    strncat(destination, source, n);
+    printf("The new concatenated string is: %s\n", destination);
+    return 0;
+}
