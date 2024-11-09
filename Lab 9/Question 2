@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+int swapintegers(int a, int b);
+int swapintegers(int a, int b){
+    int temp = b;
+    b = a;
+    a = temp;
+    printf("The value of 'a' now: %d\n", a);
+    printf("The value of 'b' now: %d", b);
+    return a,b;
+}
+int main() {
+    swapintegers(5,4);
+    return 0;
+}
