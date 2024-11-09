@@ -1,0 +1,13 @@
+#include <stdio.h>
+void Even_Odd(int a);
+void Even_Odd(int a){
+    if(a%2 == 0){
+        printf("The number is even.");
+    }
+    else{
+        printf("The number is odd");
+    }
+}
+int main() {
+    Even_Odd(3);
+}
