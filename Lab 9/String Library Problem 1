@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-helloint main() {
+int main() {
     char destination[100], source[100];
     int n;
     printf("Enter the destination string: ");
