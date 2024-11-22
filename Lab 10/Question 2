@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>
+typedef struct {
+    double x;
+    double y;
+} Point;
+double calculateDistance(Point p1, Point p2) {
+    return sqrt(pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2));
+}
+int isPointInsideRectangle(Point p, double x1, double y1, double x2, double y2) {
+    return (p.x >= x1 && p.x <= x2 && p.y >= y1 && p.y <= y2);
+}
+int main() {
+    Point p1 = {2.0, 3.0};
+    Point p2 = {5.0, 7.0};
+    double distance = calculateDistance(p1, p2);
+    printf("Distance between points: %.2f\n", distance);
+    Point testPoint = {4.0, 5.0};
+    double rectX1 = 1.0, rectY1 = 2.0, rectX2 = 6.0, rectY2 = 8.0;
+    if (isPointInsideRectangle(testPoint, rectX1, rectY1, rectX2, rectY2)) {
+        printf("Point (%.2f, %.2f) lies inside the rectangle.\n", testPoint.x, testPoint.y);
+    } else {
+        printf("Point (%.2f, %.2f) lies outside the rectangle.\n", testPoint.x, testPoint.y);
+    }
+    return 0;
+}
