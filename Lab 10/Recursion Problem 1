@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+int sum(int a);
+int sum(int a){
+    int digit;
+    if(a==0){
+        return 0;
+    }
+    else{
+        digit = a%10;
+        return digit+sum(a/10);
+    }
+}
+int main() {
+    int result = sum(74364347);
+    printf("%d", result);
+    return 0;
+}
