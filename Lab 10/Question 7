@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include <stdbool.h>
+typedef struct {
+    int day;
+    int month;
+    int year;
+} Date;
+int daysBetweenDates(Date date1, Date date2);
+int dayOfWeek(Date date);
+bool isValidDate(Date date);
+bool isLeapYear(int year);
+int daysInMonth(int month, int year);
+int countDays(Date date);
+const char* dayNames[] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+bool isLeapYear(int year) {
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
+int daysInMonth(int month, int year) {
+    if (month == 2) {
+        return isLeapYear(year) ? 29 : 28;
+    }
+    int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    return days[month - 1];
+}
+bool isValidDate(Date date) {
+    if (date.year < 1 || date.month < 1 || date.month > 12 || date.day < 1 || date.day > daysInMonth(date.month, date.year)) {
+        return false;
+    }
+    return true;
+}
+int daysBetweenDates(Date date1, Date date2) {
+    if (!isValidDate(date1) || !isValidDate(date2)) {
+        printf("Invalid date(s) provided.\n");
+        return -1;
+    }
+    int days1 = countDays(date1);
+    int days2 = countDays(date2);
+    return days1 > days2 ? (days1 - days2) : (days2 - days1);
+}
+int countDays(Date date) {
+    int days = date.day;
+    for (int i = 1; i < date.month; i++) {
+        days += daysInMonth(i, date.year);
+    }
+    for (int i = 1; i < date.year; i++) {
+        days += isLeapYear(i) ? 366 : 365;
+    }
+
+    return days;
+}
+int dayOfWeek(Date date) {
+    if (!isValidDate(date)) {
+        printf("Invalid date provided.\n");
+        return -1;
+    }
+    int d = date.day;
+    int m = (date.month < 3) ? date.month + 12 : date.month;
+    int y = (date.month < 3) ? date.year - 1 : date.year;
+    int k = y % 100;
+    int j = y / 100;
+    int dayOfWeek = (d + 13 * (m + 1) / 5 + k + k / 4 + j / 4 + 5 * j) % 7;
+    return (dayOfWeek + 6) % 7;
+}
+int main() {
+    Date date1 = {10, 2, 2024}; 
+    Date date2 = {25, 12, 2024}; 
+    int days = daysBetweenDates(date1, date2);
+    if (days != -1) {
+        printf("Days between dates: %d\n", days);
+    }
+    int dayIndex = dayOfWeek(date1);
+    if (dayIndex != -1) {
+        printf("Day of the week for %02d/%02d/%04d: %s\n", date1.day, date1.month, date1.year, dayNames[dayIndex]);
+    }
+    if (isValidDate(date1)) {
+        printf("Date %02d/%02d/%04d is valid.\n", date1.day, date1.month, date1.year);
+    } else {
+        printf("Date %02d/%02d/%04d is invalid.\n", date1.day, date1.month, date1.year);
+    }
+    return 0;
+}
