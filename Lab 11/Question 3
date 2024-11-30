@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define BUFFER_SIZE 1024
+char* replaceWord(const char* str, const char* oldWord, const char* newWord) {
+    char* result;
+    int i, count = 0;
+    int oldWordLen = strlen(oldWord);
+    int newWordLen = strlen(newWord);
+    for (i = 0; str[i] != '\0'; i++) {
+        if (strstr(&str[i], oldWord) == &str[i]) {
+            count++;
+            i += oldWordLen - 1;
+        }
+    }
+    result = (char*)malloc(i + count * (newWordLen - oldWordLen) + 1);
+    if (result == NULL) {
+        fprintf(stderr, "Memory allocation failed.\n");
+        exit(EXIT_FAILURE);
+    }
+    i = 0;
+    while (*str) {
+        if (strstr(str, oldWord) == str) {
+            strcpy(&result[i], newWord);
+            i += newWordLen;
+            str += oldWordLen;
+        } else {
+            result[i++] = *str++;
+        }
+    }
+    result[i] = '\0';
+    return result;
+}
+void replaceWordInFile(const char* filename, const char* oldWord, const char* newWord) {
+    FILE* file;
+    char* buffer = NULL;
+    long fileSize;
+    file = fopen(filename, "r");
+    if (file == NULL) {
+        perror("Error opening file");
+        return;
+    }
+    fseek(file, 0, SEEK_END);
+    fileSize = ftell(file);
+    rewind(file);
+    buffer = (char*)malloc(fileSize + 1);
+    if (buffer == NULL) {
+        fprintf(stderr, "Memory allocation failed.\n");
+        fclose(file);
+        return;
+    }
+    fread(buffer, 1, fileSize, file);
+    buffer[fileSize] = '\0';  
+    fclose(file);
+    char* modifiedContent = replaceWord(buffer, oldWord, newWord);
+    free(buffer);  
+    file = fopen(filename, "w");
+    if (file == NULL) {
+        perror("Error opening file for writing");
+        free(modifiedContent);
+        return;
+    }
+    fprintf(file, "%s", modifiedContent);
+    fclose(file);
+    free(modifiedContent);
+    printf("All occurrences of '%s' have been replaced with '%s' in the file '%s'.\n",
+           oldWord, newWord, filename);
+}
+int main() {
+    char filename[100], oldWord[50], newWord[50];
+    printf("Enter the filename: ");
+    scanf("%s", filename);
+    printf("Enter the word to replace: ");
+    scanf("%s", oldWord);
+    printf("Enter the new word: ");
+    scanf("%s", newWord);
+    replaceWordInFile(filename, oldWord, newWord);
+    return 0;
+}
