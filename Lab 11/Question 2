@@ -1,0 +1,87 @@
+Open the File:
+Use fopen() to open the text file in read mode.
+Read the File:
+Use fscanf() or fgets() to read the contents of the file line by line or word by word.
+Normalize Words:
+Convert all words to lowercase to ensure case-insensitivity.
+Remove punctuation marks and other non-alphabetic characters from the words.
+Store Word Counts:
+Use a dynamic data structure like an array of structures to store words and their counts. Alternatively, use a hash map if implementing from scratch.
+Check for Existing Words:
+Before adding a word to the list, check if it already exists. If it does, increment its count; otherwise, add it as a new entry.
+Display Results:
+Print each word and its frequency once the file processing is complete.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#define MAX_WORD_LEN 50
+#define MAX_WORDS 1000
+typedef struct {
+    char word[MAX_WORD_LEN];
+    int count;
+} Word;
+void toLowerCase(char *str) {
+    for (int i = 0; str[i]; i++) {
+        str[i] = tolower(str[i]);
+    }
+}
+void removePunctuation(char *str) {
+    char *src = str, *dst = str;
+    while (*src) {
+        if (isalnum((unsigned char)*src)) {
+            *dst++ = *src;
+        }
+        src++;
+    }
+    *dst = '\0';
+}
+int findWord(Word words[], int size, char *word) {
+    for (int i = 0; i < size; i++) {
+        if (strcmp(words[i].word, word) == 0) {
+            return i;
+        }
+    }
+    return -1;
+}
+int main() {
+    FILE *file;
+    char filename[100], buffer[MAX_WORD_LEN];
+    Word words[MAX_WORDS];
+    int wordCount = 0;
+    for (int i = 0; i < MAX_WORDS; i++) {
+        words[i].count = 0;
+    }
+    printf("Enter the filename: ");
+    scanf("%s", filename);
+    file = fopen(filename, "r");
+    if (file == NULL) {
+        perror("Error opening file");
+        return EXIT_FAILURE;
+    }
+    while (fscanf(file, "%s", buffer) != EOF) {
+        toLowerCase(buffer);
+        removePunctuation(buffer);
+        if (strlen(buffer) == 0) continue; // Skip empty words after cleanup
+        int index = findWord(words, wordCount, buffer);
+        if (index != -1) {
+            words[index].count++;
+        } else {
+            strcpy(words[wordCount].word, buffer);
+            words[wordCount].count = 1;
+            wordCount++;
+        }
+        if (wordCount >= MAX_WORDS) {
+            fprintf(stderr, "Maximum word count exceeded.\n");
+            break;
+        }
+    }
+    fclose(file);
+    printf("\nWord Frequencies:\n");
+    for (int i = 0; i < wordCount; i++) {
+        printf("%s: %d\n", words[i].word, words[i].count);
+    }
+    return 0;
+}
+
