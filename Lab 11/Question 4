@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <string.h>
+#define NUM_STUDENTS 5
+typedef struct {
+    float maths;
+    float science;
+    float english;
+} Marks;
+typedef struct {
+    int roll_no;
+    char name[50];
+    Marks marks;
+} Student;
+float calculateAverage(Marks marks) {
+    return (marks.maths + marks.science + marks.english) / 3.0;
+}
+int main() {
+    Student students[NUM_STUDENTS];
+    int i;
+    printf("Enter details for %d students:\n", NUM_STUDENTS);
+    for (i = 0; i < NUM_STUDENTS; i++) {
+        printf("\nStudent %d:\n", i + 1);
+        printf("Enter roll number: ");
+        scanf("%d", &students[i].roll_no);
+        printf("Enter name: ");
+        scanf(" %[^\n]s", students[i].name);
+        printf("Enter marks in Maths: ");
+        scanf("%f", &students[i].marks.maths);
+        printf("Enter marks in Science: ");
+        scanf("%f", &students[i].marks.science);
+        printf("Enter marks in English: ");
+        scanf("%f", &students[i].marks.english);
+    }
+    printf("\nStudent Details with Average Marks:\n");
+    for (i = 0; i < NUM_STUDENTS; i++) {
+        float average = calculateAverage(students[i].marks);
+        printf("\nRoll No: %d\n", students[i].roll_no);
+        printf("Name: %s\n", students[i].name);
+        printf("Marks - Maths: %.2f, Science: %.2f, English: %.2f\n",
+               students[i].marks.maths,
+               students[i].marks.science,
+               students[i].marks.english);
+        printf("Average Marks: %.2f\n", average);
+    }
+    return 0;
+}
