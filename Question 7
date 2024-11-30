@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+typedef struct {
+    char name[100];
+    int year_established;
+    char departments[5][50]; // Array to store up to 5 department names
+    int num_departments;     // Actual number of departments
+} Company;
+void displayCompanyDetails(Company company) {
+    printf("\nCompany Details:\n");
+    printf("Name: %s\n", company.name);
+    printf("Year Established: %d\n", company.year_established);
+    printf("Departments:\n");
+    for (int i = 0; i < company.num_departments; i++) {
+        printf("  - %s\n", company.departments[i]);
+    }
+}
+int main() {
+    Company company;
+    printf("Enter the company name: ");
+    scanf(" %[^\n]s", company.name);
+    printf("Enter the year established: ");
+    scanf("%d", &company.year_established);
+    printf("Enter the number of departments (up to 5): ");
+    scanf("%d", &company.num_departments);
+    if (company.num_departments < 1 || company.num_departments > 5) {
+        printf("Invalid number of departments. Please enter a value between 1 and 5.\n");
+        return 1;
+    }
+    for (int i = 0; i < company.num_departments; i++) {
+        printf("Enter the name of department %d: ", i + 1);
+        scanf(" %[^\n]s", company.departments[i]);
+    }
+    displayCompanyDetails(company);
+    return 0;
+}
