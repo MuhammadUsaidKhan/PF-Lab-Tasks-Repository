@@ -11,7 +11,7 @@ int main() {
     fullName = (char *)malloc((n + 1) * sizeof(char)); // +1 for the null terminator
     if (fullName == NULL) {
         printf("Memory allocation failed.\n");
-        return EXIT_FAILURE;
+        exit(1);
     }
     printf("Enter your full name: ");
     fgets(tempName, sizeof(tempName), stdin);
@@ -20,5 +20,5 @@ int main() {
     fullName[n] = '\0'; // Ensure the string is null-terminated
     printf("\nDynamic Array = \"%s\"\n", fullName);
     free(fullName);
-    return EXIT_SUCCESS;
+    return 0;
 }
