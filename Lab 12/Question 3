@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int size,i;
+    printf("Enter size of an array: ");
+    scanf("%d", &size);
+    int *arr;
+    arr = (int*)malloc(size * (sizeof(int)));
+    for(i=0; i<size; i++){
+        scanf("%d", arr+i);
+    }
+    for(i=0; i<size; i++){
+        printf("%d ", *(arr+i));
+    }
+    int newsize;
+    printf("\nEnter new size: ");
+    scanf("%d", &newsize);
+    arr = (int*)realloc(arr, newsize * (sizeof(int)));
+    for(i=size; i<newsize; i++){
+        scanf("%d", arr+i);
+    }
+    for(i=0; i<newsize; i++){
+        printf("%d ", *(arr+i));
+    }
+    int max = -1;
+    for(i=0; i<newsize; i++){
+        if((*(arr+i))>max){
+            max = *(arr+i);
+        }
+    }
+    printf("\nThe Maximum Value in the Array is: %d\n", max);
+    return 0;
+}
