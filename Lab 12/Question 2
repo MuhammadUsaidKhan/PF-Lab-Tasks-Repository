@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+void swapped(int *a, int *b, int *c);
+void swapped(int *a, int *b, int *c){
+    int temp;
+    temp = *b;
+    *b = *a;
+    *a = *c;
+    *c = temp;
+}
+int main() {
+    int a,b,c;
+    printf("Enter the values of a, b , and c: ");
+    scanf("%d %d %d", &a, &b, &c);
+    printf("\nBefore swapping:\n");
+    printf("a = %d, b = %d, c = %d\n", a, b, c);
+    swapped(&a, &b, &c);
+    printf("\nAfter swapping:\n");
+    printf("a = %d, b = %d, c = %d\n", a, b, c);
+    return 0;
+}
